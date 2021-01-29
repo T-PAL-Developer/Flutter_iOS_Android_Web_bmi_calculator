@@ -1,12 +1,9 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../custom_widgets/icon_content.dart';
 import '../custom_widgets/reusable_card.dart';
 import '../models/gender_picking_logic.dart';
-
-const double bottomButtonHeight = 80.0;
-const Color bottomButtonColor = Color(0xFFEB3154);
-const Color cardColor = Color(0xFF1D1E33);
 
 class InputPage extends StatefulWidget {
   @override
@@ -63,7 +60,7 @@ class _InputPageState extends State<InputPage> {
           )),
           Expanded(
             child: ReusableCard(
-              color: cardColor,
+              color: kActiveCardColor,
             ),
           ),
           Expanded(
@@ -71,21 +68,21 @@ class _InputPageState extends State<InputPage> {
             children: [
               Expanded(
                 child: ReusableCard(
-                  color: cardColor,
+                  color: kActiveCardColor,
                 ),
               ),
               Expanded(
                 child: ReusableCard(
-                  color: cardColor,
+                  color: kActiveCardColor,
                 ),
               ),
             ],
           )),
           Container(
-            color: bottomButtonColor,
+            color: kBottomButtonColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomButtonHeight,
+            height: kBottomButtonHeight,
           ),
         ],
       ),
