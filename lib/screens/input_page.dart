@@ -13,6 +13,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   GenderLogic genderCardLogic = GenderLogic();
 
+  int _currentSliderValue = 180;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +22,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
               child: Row(
@@ -61,6 +64,40 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               color: kActiveCardColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'HEIGHT',
+                    style: kLabelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        _currentSliderValue.toString(),
+                        style: kNumberTextStyle,
+                      ),
+                      Text(
+                        'cm',
+                        style: kLabelTextStyle,
+                      ),
+                    ],
+                  ),
+                  Slider(
+                    value: _currentSliderValue.toDouble(),
+                    min: 100,
+                    max: 230,
+                    onChanged: (double value) {
+                      setState(() {
+                        _currentSliderValue = value.toInt();
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(

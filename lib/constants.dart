@@ -9,6 +9,11 @@ const Color kInactiveCardColor = Color(0xFF111328);
 const Color kInactiveIconColor = Colors.grey;
 const Color kActiveIconColor = Colors.white;
 
+const TextStyle kNumberTextStyle = TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.w900,
+);
+
 // used in icon_content.dart
 const TextStyle kLabelTextStyle = TextStyle(
   fontSize: 18.0,
