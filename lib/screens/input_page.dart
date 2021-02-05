@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/custom_widgets/red_button.dart';
+import 'package:bmi_calculator/models/calculator_brain.dart';
 import 'package:bmi_calculator/models/weight_age_buttons_logic.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,9 +18,10 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   GenderLogic genderCardLogic = GenderLogic();
-
   int _currentSliderValue = 180;
+
   Timer _timer;
+
   CustomButtonsLogic _weight =
       CustomButtonsLogic(value: 60, minValue: 30, maxValue: 250);
   CustomButtonsLogic _age =
@@ -244,10 +246,17 @@ class _InputPageState extends State<InputPage> {
             ],
           )),
           RedButton(
-              onTap: () {
-                Navigator.pushNamed(context, '/first');
-              },
-              buttonTitle: 'Calculate'.toUpperCase()),
+            onTap: () {
+              setState(() {
+                if (genderCardLogic.isSelectedGender() == true) {
+                  CalculatorBrain calc = CalculatorBrain(
+                      height: _currentSliderValue, weight: _weight.value);
+                  Navigator.pushNamed(context, '/first');
+                }
+              });
+            },
+            buttonTitle: genderCardLogic.buttonText(),
+          ),
         ],
       ),
     );

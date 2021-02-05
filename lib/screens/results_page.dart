@@ -35,7 +35,7 @@ class ResultsPage extends StatelessWidget {
                 children: [
                   Text(
                     'Normal',
-                    style: kResultTextStyle,
+                    style: kGoodResultTextStyle,
                   ),
                   Text(
                     '14.4',
