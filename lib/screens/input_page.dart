@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/custom_widgets/red_button.dart';
 import 'package:bmi_calculator/models/weight_age_buttons_logic.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -242,18 +243,11 @@ class _InputPageState extends State<InputPage> {
               ),
             ],
           )),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/first');
-            },
-            child: Container(
-              child: Text('CALCULATE'),
-              color: kBottomButtonColor,
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomButtonHeight,
-            ),
-          ),
+          RedButton(
+              onTap: () {
+                Navigator.pushNamed(context, '/first');
+              },
+              buttonTitle: 'Calculate'.toUpperCase()),
         ],
       ),
     );
