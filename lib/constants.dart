@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const int kTimeInMs = 50;
+
 const double kBottomButtonHeight = 80.0;
 const Color kBottomButtonColor = Color(0xFFEB3154);
 
