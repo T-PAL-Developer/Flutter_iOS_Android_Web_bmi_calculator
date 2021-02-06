@@ -4,6 +4,7 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/custom_widgets/red_button.dart';
 import 'package:bmi_calculator/models/calculator_brain.dart';
 import 'package:bmi_calculator/models/weight_age_buttons_logic.dart';
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../custom_widgets/icon_content.dart';
@@ -247,13 +248,21 @@ class _InputPageState extends State<InputPage> {
           )),
           RedButton(
             onTap: () {
-              setState(() {
-                if (genderCardLogic.isSelectedGender() == true) {
-                  CalculatorBrain calc = CalculatorBrain(
-                      height: _currentSliderValue, weight: _weight.value);
-                  Navigator.pushNamed(context, '/first');
-                }
-              });
+              if (genderCardLogic.isSelectedGender() == true) {
+                CalculatorBrain calc = CalculatorBrain(
+                    height: _currentSliderValue, weight: _weight.value);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(
+                      bmiResult: calc.calculateBMI(),
+                      resultText: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                      resultTextStyle: calc.resultTextColor(),
+                    ),
+                  ),
+                );
+              }
             },
             buttonTitle: genderCardLogic.buttonText(),
           ),
