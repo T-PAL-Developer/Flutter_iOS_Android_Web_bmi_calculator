@@ -1,16 +1,25 @@
 # bmi_calculator
 
-A new Flutter application.
+A Flutter application on iOS, Android, desktop and web.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+Body Mass Index Calculator. UI inspired by the designs made by [Ruben Vaalt](https://dribbble.com/shots/4585382-Simple-BMI-Calculator).
+It is a multi screen app with simple functionality but full-on custom styling. <br>
+You can find here:
 
-A few resources to get you started if this is your first Flutter project:
+- How to use Flutter themes to create coherent branding. 
+- How to create multi-page apps using Flutter Routes and Navigator.
+- How to extract and refactor Flutter Widgets.
+- How to use the GestureDetector Widget to detect more than just a tap.
+- How to customise Flutter Widgets to achieve a specific design style.
+- Dart Enums and the Ternary Operator.
+- Composition way of creating custom UI.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://i.ibb.co/KbbCGRY/Zrzut-ekranu-2021-02-7-o-13-37-27.png">
+<img src="https://i.ibb.co/BtSC0kQ/Zrzut-ekranu-2021-02-7-o-13-38-44.png">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
+### Flutter documentation
+For help getting started with Flutter, view
+[online documentation](https://flutter.dev/docs), tutorials,
 samples, guidance on mobile development, and a full API reference.
