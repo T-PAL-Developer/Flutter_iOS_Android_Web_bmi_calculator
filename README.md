@@ -4,6 +4,8 @@ A Flutter application on iOS, Android, desktop and web.
 
 ## Description
 
+<strong>App is available online, click here -> [Live](https://bmi-calculator-flutter.web.app/#/)</strong>
+
 Body Mass Index Calculator. UI inspired by the designs made by [Ruben Vaalt](https://dribbble.com/shots/4585382-Simple-BMI-Calculator).
 It is a multi screen app with simple functionality but full-on custom styling. <br>
 You can find here:
